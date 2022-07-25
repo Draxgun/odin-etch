@@ -6,7 +6,7 @@ let mainGrid = document.querySelector(".mainGrid")
 
 /*Function that creates grid */
 let createGrid = (n) => {
-    for(let i=1; i=n;i++) {
+    for(let i=1; i==n;i++) {
         let grid = document.createElement('div');
         grid.classList.add("grid");
         grid.setAttribute('id', `grid${i}` );
