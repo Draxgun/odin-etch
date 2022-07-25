@@ -6,12 +6,13 @@ let mainGrid = document.querySelector(".mainGrid")
 
 /*Function that creates grid */
 let createGrid = (n) => {
-    for(let i=1; i=n;i++) {
+    for(let i=1; i<=n*n;i++) {
         let grid = document.createElement('div');
-        grid.className = "grid";
+        grid.classList.add("grid");
+        grid.textContent= "h"
         grid.setAttribute('id', `grid${i}` );
         mainGrid.appendChild(grid);
     }
 }
 
-createGrid(20)
+createGrid(10);
