@@ -8,7 +8,7 @@ let mainGrid = document.querySelector(".mainGrid")
 let createGrid = (n) => {
     for(let i=1; i=n;i++) {
         let grid = document.createElement('div');
-        grid.className = "grid";
+        grid.classList.add("grid");
         grid.setAttribute('id', `grid${i}` );
         mainGrid.appendChild(grid);
     }
