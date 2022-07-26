@@ -11,7 +11,31 @@
 <body>
     <div class="mainContainer">
         <div class="header">AlexaSketch</div>
-        <div class="mainGrid"></div>
+        <div class="content">
+            <div class="mainCommands">
+                <!--Control for color -->
+                <div class="colorControl">
+                    <div id="colorText">Choose your color!</div>
+                    <input type="color" id="colorPicker" value="#0000FF">
+                </div>
+
+                <!--Control for background color -->
+                <div class="colorBackgroundControl">
+                    <div id="colorBackgroundText">Choose your color!</div>
+                    <input type="color" id="colorBackgroundPicker" value="#FFFFFF">
+                </div>
+
+                <!--Control for grid size -->
+                <div class="gridControl">
+                    <div id="gridText">Select the size</div>
+                    <div id="gridSizeText"></div>
+                    <input id="gridSlider" type="range" value="0">
+                </div>
+
+            </div>
+            <div class="mainGrid"></div>
+        </div>
+        
     </div>
 </body>
 </html>
