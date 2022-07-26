@@ -1,7 +1,5 @@
 
-
-let n =10
-
+let mainGrid = document.querySelector(".mainGrid");
 
 /*Grid Slider */
 let gridSlider = document.getElementById("gridSlider")
@@ -12,10 +10,12 @@ gridSizeText.textContent = `The size of the grid is ${gridSliderValue} x ${gridS
 
 gridSlider.addEventListener('change',(event) =>{
   gridSliderValue = gridSlider.value;
-  gridSizeText.textContent = `The size of the grid is ${ gridSliderValue} x ${ gridSliderValue} `;
+  gridSizeText.textContent = `The size of the grid is: ${ gridSliderValue} x ${ gridSliderValue} `;
   console.log(gridSliderValue)
   createGrid(gridSliderValue);
 })
+
+
 
 
 /* ColorFill commands and fucntions */
@@ -27,12 +27,19 @@ colorPicker.addEventListener('change', (event) => {
   console.log(fillColor)
 });
 
+/* Colorfill background and functions */
+let colorPickerBakcground = document.getElementById("colorBackgroundPicker")
+let fillColorBackground  = colorPicker.value;
+
+colorPickerBakcground.addEventListener('change', (event) => {
+  fillColorBackground  = colorPickerBakcground.value;
+  console.log(fillColorBackground)
+  mainGrid.setAttribute('style', `background-color: ${fillColorBackground};`)
+});
 
 
 
 
-let mainGrid = document.querySelector(".mainGrid");
-mainGrid.style.gridTemplateColumns = `repeat(${n},1fr)`
 
 /*Function that creates grid */
 let createGrid = (n) => {
@@ -44,22 +51,24 @@ let createGrid = (n) => {
         mainGrid.appendChild(grid);
         mainGrid.style.gridTemplateColumns = `repeat(${n},1fr)`
     }
+  createClickEvents();
 }
 
 /*ResetGrid*/
-
 let resetGrid = () =>{
   mainGrid.replaceChildren();
 }
 
 /* Makes me get all elements */    
-const grids = document.querySelectorAll('.grid');
-
-grids.forEach(grid => {
-  grid.addEventListener('click', function() {
-    grid.setAttribute('style', `background-color: ${fillColor};`);
+let createClickEvents = () => { 
+  const grids = document.querySelectorAll('.grid');
+  grids.forEach(grid => {
+    grid.addEventListener('click', function() {
+      grid.setAttribute('style', `background-color: ${fillColor};`);
+    });
   });
-});
+}
+
 
 
 
