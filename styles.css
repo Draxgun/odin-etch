@@ -11,6 +11,19 @@
     margin: 20px;
 }
 
+.content{
+    display: flex;
+    gap: 10px;
+}
+
+/* Controls */
+#gridSlider{
+    min: 0;
+    max: 100;
+    step: 2;
+}
+
+
 .mainGrid {
     width: 700px;
     height: 700px;
@@ -25,3 +38,4 @@
     border: 1px solid black;
 
 }
+
