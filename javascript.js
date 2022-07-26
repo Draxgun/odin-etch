@@ -1,5 +1,5 @@
 
-let n = 100;
+let n = 16;
 
 let mainContainer = document.querySelector(".mainContainer");
 
