@@ -85,6 +85,7 @@ let createClickEvents = () => {
     });
       
     grid.addEventListener('dblclick', function() {
+      grid.setAttribute('clicked','0');
       grid.setAttribute('style', `background-color: ${fillColorBackground};`);
     }
     );
