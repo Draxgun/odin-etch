@@ -32,16 +32,16 @@ colorPicker.addEventListener('change', (event) => {
 
 /* Colorfill background and functions */
 let colorPickerBackground = document.getElementById("colorBackgroundPicker")
-let fillColorBackground  = colorPicker.value;
+let fillColorBackground  = colorPickerBackground.value;
+console.log(fillColorBackground)
 
+/* testing */
 colorPickerBackground.addEventListener('change', (event) => {
-  fillColorBackground  = colorPickerBackground.value;
-
   const grids = document.querySelectorAll('.grid');
   grids.forEach(grid => {
+      fillColorBackground  = colorPickerBackground.value;  
       grid.setAttribute('style', `background-color: ${fillColorBackground};`);
     });  
-    console.log(fillColorBackground)
 });
 
 
