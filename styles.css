@@ -16,22 +16,44 @@
     gap: 10px;
 }
 
+.mainCommands{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
 /* Controls */
+
+.colorControl, .resetCommands , .gridControl, .colorBackgroundControl{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+}
+
 #gridSlider{
     min: 0;
     max: 100;
     step: 2;
+    width: 200px;
 }
 
-
+#colorBackgroundPicker, #colorPicker{
+    width: 150px;
+    border: 0px;
+    background-color: #fff;
+}
 .mainGrid {
-    width: 700px;
-    height: 700px;
-    min-height: 500px;
+    width: 40vw;
+    height: 30rem;
+    min-height: 600px;
     min-width: 500px;
     border: 5px solid black;
     display: grid;
-    grid-gap: 0px
+    grid-gap: 0px;
+    box-sizing: border-box;
 }
 .grid{
     box-sizing: border-box;

@@ -16,7 +16,7 @@
                 <!--Control for color -->
                 <div class="colorControl">
                     <div id="colorText">Choose your fill color!</div>
-                    <input type="color" id="colorPicker" value="#0000FF">
+                    <input type="color" id="colorPicker" value="#FFFFFF">
                 </div>
 
                 <!--Control for background color -->
@@ -29,10 +29,25 @@
                 <div class="gridControl">
                     <div id="gridText">Select the size</div>
                     <div id="gridSizeText"></div>
-                    <input id="gridSlider" type="range" value="0">
+                    <input id="gridSlider" type="range" value="0" list="tickmarks">
+                    
                 </div>
 
-            </div>
+                <!--Reset-->
+                <div class="resetCommands">
+                    <div class="resetText">Click to reset colors and grid</div>    
+                    <button class="resetButton">Reset</button> 
+                    <div class="instructions">
+                        <ul>
+                            <li>Click to draw</li>
+                            <li>Doubleclick to erase</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+
+
+                
             <div class="mainGrid"></div>
         </div>
         

@@ -5,6 +5,9 @@ let mainGrid = document.querySelector(".mainGrid");
 let gridSlider = document.getElementById("gridSlider")
 let gridSliderValue = gridSlider.value;
 
+
+
+
 let gridSizeText = document.getElementById("gridSizeText");
 gridSizeText.textContent = `The size of the grid is ${gridSliderValue} x ${gridSliderValue} `;
 
@@ -28,18 +31,27 @@ colorPicker.addEventListener('change', (event) => {
 });
 
 /* Colorfill background and functions */
-let colorPickerBakcground = document.getElementById("colorBackgroundPicker")
+let colorPickerBackground = document.getElementById("colorBackgroundPicker")
 let fillColorBackground  = colorPicker.value;
 
-colorPickerBakcground.addEventListener('change', (event) => {
-  fillColorBackground  = colorPickerBakcground.value;
-  console.log(fillColorBackground)
-  mainGrid.setAttribute('style', `background-color: ${fillColorBackground};`)
+colorPickerBackground.addEventListener('change', (event) => {
+  fillColorBackground  = colorPickerBackground.value;
+
+  const grids = document.querySelectorAll('.grid');
+  grids.forEach(grid => {
+      grid.setAttribute('style', `background-color: ${fillColorBackground};`);
+    });  
+    console.log(fillColorBackground)
 });
 
 
+/*Grid reset button */
+let resetButton = document.querySelector('.resetButton');
 
-
+resetButton.addEventListener('click' , () => {
+  resetGrid();
+  createGrid(gridSliderValue);
+})
 
 /*Function that creates grid */
 let createGrid = (n) => {
@@ -64,10 +76,16 @@ let createClickEvents = () => {
   const grids = document.querySelectorAll('.grid');
   grids.forEach(grid => {
     grid.addEventListener('click', function() {
-      grid.setAttribute('style', `background-color: ${fillColor};`);
+      grid.setAttribute('style', `background-color: ${fillColor};`)
     });
+      
+    grid.addEventListener('dblclick', function() {
+      grid.setAttribute('style', `background-color: ${fillColorBackground};`);
+    }
+    );
+
   });
-}
+};
 
 
 
