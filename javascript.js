@@ -39,8 +39,12 @@ console.log(fillColorBackground)
 colorPickerBackground.addEventListener('change', (event) => {
   const grids = document.querySelectorAll('.grid');
   grids.forEach(grid => {
-      fillColorBackground  = colorPickerBackground.value;  
-      grid.setAttribute('style', `background-color: ${fillColorBackground};`);
+      
+      if(grid.getAttribute('clicked')!='1'){
+        fillColorBackground  = colorPickerBackground.value;  
+        grid.setAttribute('style', `background-color: ${fillColorBackground};`);
+      }
+     
     });  
 });
 
@@ -76,6 +80,7 @@ let createClickEvents = () => {
   const grids = document.querySelectorAll('.grid');
   grids.forEach(grid => {
     grid.addEventListener('click', function() {
+      grid.setAttribute('clicked','1');
       grid.setAttribute('style', `background-color: ${fillColor};`)
     });
       
